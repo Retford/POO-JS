@@ -1,0 +1,12 @@
+{
+  "name": "bancopopular",
+  "version": "1.0.0",
+  "description": "banco popular con Alura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Retford",
+  "license": "ISC",
+  "type": "module" 
+}
