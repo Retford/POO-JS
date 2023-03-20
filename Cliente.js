@@ -2,9 +2,10 @@ export class cliente {
   nombre;
   dni;
   ruc;
-  constructor() {
-    this.nombre = '';
-    this.dni = '';
-    this.ruc = '';
+
+  constructor(nombre, dni, ruc) {
+    this.nombre = nombre;
+    this.dni = dni;
+    this.ruc = ruc;
   }
 }

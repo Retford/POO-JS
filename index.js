@@ -1,51 +1,28 @@
 import { cliente } from './Cliente.js';
 import { cuentaCorriente } from './CuentaCorriente.js';
 
-const cliente1 = new cliente();
+const cliente1 = new cliente('Juan', '73251452', '10732514521');
+console.log(cliente1);
 
-cliente1.nombre = 'Juan';
-cliente1.dni = '73251452';
-cliente1.ruc = '10732514521';
+const cliente2 = new cliente('Pedrito', '73212552', '10732125521');
+console.log(cliente2);
 
-const cliente2 = new cliente();
+const cuenta1 = new cuentaCorriente(cliente1, '1', '001');
 
-cliente2.nombre = 'Pedrito';
-cliente2.dni = '73212552';
-cliente2.ruc = '10732125521';
-
-const cuenta1 = new cuentaCorriente();
-
-cuenta1.numeroCuenta = '1651651651';
-cuenta1.agencia = '6516515';
-cuenta1.cliente = cliente1;
-
-const cuenta2 = new cuentaCorriente();
-
-cuenta2.numeroCuenta = '1651651651';
-cuenta2.agencia = '6516515';
-cuenta2.cliente = cliente2;
-
-
-let saldoJuan = cuenta1.verSaldo();
-console.log(`El Saldo inicial de ${cliente1.nombre} es: ${saldoJuan}`);
-
-saldoJuan = cuenta1.entradaSaldo(15000);
-
-console.log(
-  `El Saldo actual de ${cliente1.nombre} después de depositar 15000 es: ${saldoJuan}`
-);
-
-console.log(`El Saldo inicial de ${cliente2.nombre} es: ${cuenta2.verSaldo()}`);
-let saldoPedrito = cuenta1.transferirCuenta(3000, cuenta2);
-saldoPedrito = cuenta2.verSaldo();
-
-saldoJuan = cuenta1.verSaldo();
-
-console.log(
-  `El Saldo actual de ${cliente2.nombre} después de la transferencia es: ${saldoPedrito}`
-);
-console.log(
-  `El Saldo actual de ${cliente1.nombre} después de la transferencia es: ${saldoJuan}`
-);
 console.log(cuenta1);
-console.log(cuenta2);
+
+const cuentaMaria = new cuentaCorriente(cliente2, '2', '002');
+const cuentaLucas = new cuentaCorriente(cliente2, '3', '003');
+const cuentaLucho = new cuentaCorriente(cliente2, '4', '004');
+const cuentaCarlos = new cuentaCorriente(cliente2, '5', '005');
+
+cuenta1.entradaSaldo(1000);
+cuenta1.verSaldo();
+console.log(cuenta1.verSaldo());
+
+cuenta1.transferirCuenta(200, cuentaMaria);
+cuentaMaria.verSaldo();
+console.log(cuentaMaria);
+console.log(cuenta1.verSaldo());
+
+console.log(cuentaCorriente.cantidadCuentas);
